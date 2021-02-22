@@ -17,7 +17,10 @@ void rotate(vector<int>& nums, int k) {
 	
 	// IMPORTANT: If k == the length of the array, we will end up where we started
 	//So no need to do anything if that's the case. We can just return immedietly 
-	if (k == nums.size()) return;
+	if (k == size) return;
+	
+	//Eliminate unnecessary rotations
+	k = k % size;
 
 	for (size_t i = 0, count = 0; count != size; i++) {
 		int curIndex = i;
